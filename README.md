@@ -6,19 +6,19 @@
 
 Transform an xlsx file into a list of sql insert statement.
 
-[x] Columns in excel file can be ignored
+- [x] Columns in excel file can be ignored
 
-[x] title line in excel file can be ignored
+- [x] title line in excel file can be ignored
 
-[x] You can specify a custom name for the table used in the generated sql
+- [x] You can specify a custom name for the table used in the generated sql
 
-[x] You can specify a custom name for each field
+- [x] You can specify a custom name for each field
 
-[x] You can specify a custom converter if needed for each field
+- [x] You can specify a custom converter if needed for each field
 
-[x] Date can be converted to mysql format with our converter
+- [x] Date can be converted to mysql format with our converter
 
-[x] You can add a custom value (useful if the excel doent contain all the necessary fields)
+- [x] You can add a custom value (useful if the excel doent contain all the necessary fields)
 
 # Exemple
 
