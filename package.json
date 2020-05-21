@@ -1,6 +1,6 @@
 {
     "name": "xlsx2sql",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Transform an xlsx file into a list of sql insert statement",
     "main": "index.js",
     "scripts": {
