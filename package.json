@@ -11,7 +11,7 @@
         "url": "git+https://github.com/rafipiccolo/xlsx2sql.git"
     },
     "author": "Raphael Piccolo",
-    "license": "ISC",
+    "license": "ICS",
     "bugs": {
         "url": "https://github.com/rafipiccolo/xlsx2sql/issues"
     },
