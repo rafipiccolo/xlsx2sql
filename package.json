@@ -19,5 +19,8 @@
     "dependencies": {
         "moment": "^2.29.1",
         "node-xlsx": "^0.15.0"
+    },
+    "devDependencies": {
+        "prettier": "^2.2.1"
     }
 }
