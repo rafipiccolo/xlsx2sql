@@ -32,9 +32,7 @@ function xlsx2sql(file, config, callback) {
             });
             values.push(x);
         });
-        var sql = `insert into \`${config.name}\` (${fields.map((x) => `\`${  x  }\``).join(',')}) values\n${values
-            .map((x) => `(${  x  })`)
-            .join(',\n')} ;`;
+        var sql = `insert into \`${config.name}\` (${fields.map((x) => `\`${x}\``).join(',')}) values\n${values.map((x) => `(${x})`).join(',\n')} ;`;
         callback(null, sql);
     });
 }
@@ -44,9 +42,9 @@ function ExcelDateToJSDate(date) {
 }
 
 function escaping(s) {
-    s = `${  s}`;
+    s = `${s}`;
     s = s.replace(/'/g, "''");
-    s = `'${  s  }'`;
+    s = `'${s}'`;
     return s;
 }
 
