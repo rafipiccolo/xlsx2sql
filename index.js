@@ -51,7 +51,7 @@ function escaping(s) {
 }
 
 module.exports = {
-    xlsx2sql: xlsx2sql,
-    ExcelDateToJSDate: ExcelDateToJSDate,
-    escaping: escaping,
+    xlsx2sql,
+    ExcelDateToJSDate,
+    escaping,
 };
