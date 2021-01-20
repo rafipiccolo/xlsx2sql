@@ -16,7 +16,7 @@ xlsx2sql(
                     else if (v == '0.2') return 61;
                     else if (v == '0.055') return 59;
                     else if (v == '0') return 58;
-                    else throw new Error('Unknown tva ' + v);
+                    else throw new Error(`Unknown tva ${  v}`);
                 },
             },
             { index: 3, name: 'tarifLibreTtc' },
