@@ -1,3 +1,5 @@
+'use strict';
+
 var xlsx2sql = require('./index.js').xlsx2sql;
 
 xlsx2sql(
