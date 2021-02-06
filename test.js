@@ -18,10 +18,10 @@ describe('check Crontab', function () {
                         name: 'tva_id',
                         convert: function (v) {
                             if (v == '0.1') return 60;
-                            else if (v == '0.2') return 61;
-                            else if (v == '0.055') return 59;
-                            else if (v == '0') return 58;
-                            else throw new Error(`Unknown tva ${v}`);
+                            if (v == '0.2') return 61;
+                            if (v == '0.055') return 59;
+                            if (v == '0') return 58;
+                            throw new Error(`Unknown tva ${v}`);
                         },
                     },
                     { index: 3, name: 'tarifLibreTtc' },
@@ -30,7 +30,7 @@ describe('check Crontab', function () {
                         name: 'tarifLibreBoolean',
                         convert: function (v) {
                             if (v == 'ON') return 1;
-                            else return 0;
+                            return 0;
                         },
                     },
                     { index: 5, name: 'compta' },
