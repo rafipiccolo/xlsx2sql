@@ -1,5 +1,3 @@
-'use strict';
-
 var xlsx = require('node-xlsx').default;
 var fs = require('fs');
 var moment = require('moment');
