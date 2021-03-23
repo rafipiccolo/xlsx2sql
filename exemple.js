@@ -1,4 +1,4 @@
-var xlsx2sql = require('./index.js').xlsx2sql;
+let xlsx2sql = require('./index.js').xlsx2sql;
 
 xlsx2sql(
     `${__dirname}/test.xlsx`,

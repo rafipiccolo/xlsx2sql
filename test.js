@@ -1,5 +1,5 @@
-var xlsx2sql = require('./index.js');
-var assert = require('assert');
+let xlsx2sql = require('./index.js');
+let assert = require('assert');
 
 describe('check Crontab', function () {
     it('should generate sql', function (cb) {

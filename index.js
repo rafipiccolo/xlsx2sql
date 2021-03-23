@@ -1,6 +1,6 @@
-var xlsx = require('node-xlsx').default;
-var fs = require('fs');
-var moment = require('moment');
+let xlsx = require('node-xlsx').default;
+let fs = require('fs');
+let moment = require('moment');
 
 function xlsx2sql(file, config, callback) {
     if (!config.name) throw new Error('Bad config, please specify a table "name"');
@@ -14,15 +14,15 @@ function xlsx2sql(file, config, callback) {
         if (err) return callback(err);
 
         const excel = xlsx.parse(s);
-        var page = excel[0].data;
+        let page = excel[0].data;
         // skip X first lines
-        for (var i = 0; i < config.skip; i++) page.shift();
+        for (let i = 0; i < config.skip; i++) page.shift();
 
         // foreach line in page we go through the array and replace to sql
-        var fields = config.fields.map((x) => x.name);
-        var values = [];
+        let fields = config.fields.map((x) => x.name);
+        let values = [];
         page.forEach(function (line) {
-            var x = [];
+            let x = [];
             config.fields.forEach(function (field) {
                 if (typeof field.value !== 'undefined') x.push(field.value);
                 else if (typeof field.index !== 'undefined') {
@@ -32,7 +32,7 @@ function xlsx2sql(file, config, callback) {
             });
             values.push(x);
         });
-        var sql = `insert into \`${config.name}\` (${fields.map((x) => `\`${x}\``).join(',')}) values\n${values.map((x) => `(${x})`).join(',\n')} ;`;
+        let sql = `insert into \`${config.name}\` (${fields.map((x) => `\`${x}\``).join(',')}) values\n${values.map((x) => `(${x})`).join(',\n')} ;`;
         callback(null, sql);
     });
 }
