@@ -33,7 +33,7 @@ xlsx2sql(
             { name: 'updatedAt', value: 'now()' },
         ],
     },
-    function (err, sql) {
+    (err, sql) => {
         console.log(err);
         console.log(sql);
     }

@@ -4,13 +4,13 @@ let moment = require('moment');
 
 function xlsx2sql(file, config, callback) {
     if (!config.name) throw new Error('Bad config, please specify a table "name"');
-    config.fields.forEach(function (field) {
+    config.fields.forEach((field) => {
         if ((typeof field.value === 'undefined' && typeof field.index === 'undefined') || !field.name)
             throw new Error('Bad config, please specify a "name" and ("index" or "value") for each ligne');
     });
 
     // open and parse xls
-    fs.readFile(file, function (err, s) {
+    fs.readFile(file, (err, s) => {
         if (err) return callback(err);
 
         const excel = xlsx.parse(s);
@@ -21,9 +21,9 @@ function xlsx2sql(file, config, callback) {
         // foreach line in page we go through the array and replace to sql
         let fields = config.fields.map((x) => x.name);
         let values = [];
-        page.forEach(function (line) {
+        page.forEach((line) => {
             let x = [];
-            config.fields.forEach(function (field) {
+            config.fields.forEach((field) => {
                 if (typeof field.value !== 'undefined') x.push(field.value);
                 else if (typeof field.index !== 'undefined') {
                     if (field.convert) x.push(escaping(field.convert(line[field.index])));

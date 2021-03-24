@@ -1,8 +1,8 @@
 let xlsx2sql = require('./index.js');
 let assert = require('assert');
 
-describe('check Crontab', function () {
-    it('should generate sql', function (cb) {
+describe('check Crontab', () => {
+    it('should generate sql', (cb) => {
         xlsx2sql.xlsx2sql(
             `${__dirname}/test.xlsx`,
             {
@@ -36,7 +36,7 @@ describe('check Crontab', function () {
                     { name: 'updatedAt', value: 'now()' },
                 ],
             },
-            function (err, sql) {
+            (err, sql) => {
                 assert.ifError(err);
                 assert.equal(
                     sql,
